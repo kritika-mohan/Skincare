@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare AI Analysis</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- MediaPipe Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>DermaGlow AI</h1>
+            <p>Advanced Skincare Analysis</p>
+        </header>
+
+        <main>
+            <div class="camera-wrapper">
+                <video class="input_video"></video>
+                <canvas class="output_canvas"></canvas>
+                <div class="scan-overlay"></div>
+            </div>
+
+            <div class="controls">
+                <button id="analyzeBtn" class="btn primary-btn">Analyze Skin</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made by Kritika Mohan</p>
+        </footer>
+
+        <!-- Analysis Result Modal -->
+        <div id="resultModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Skin Analysis Results</h2>
+                <div id="loadingScanner" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing skin properties...</p>
+                </div>
+                <div id="aiResponse" class="markdown-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
